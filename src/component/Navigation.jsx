@@ -1,35 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const Navlink = [
+    { id: 1, link: "Home", path: "/" },
+    { id: 2, link: "About", path: "/about" },
+    { id: 3, link: "Skills", path: "/skills" },
+    { id: 4, link: "Education", path: "/education" },
+    { id: 5, link: "Experience", path: "/experience" },
+    { id: 6, link: "Service", path: "/service" },
+    { id: 7, link: "Blog", path: "/blog" },
+    { id: 8, link: "Contact", path: "/contact" },
+  ];
+
   return (
-    <nav className='items-center m-8 hover:text-sky-blue-400 '>
+    <nav className="text-center m-8 hover:text-sky-blue-400 ">
       <ul>
-        <li className='p4'>
-          <Link to="/" className='p4 hover:text-blue-600'>Home</Link>
-        </li>
-        <li className='p4' >
-          <Link to="/about" className='p4 hover:text-blue-600'>About</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/skills" className='p4 hover:text-blue-600'>Skills</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/education" className='p4 hover:text-blue-600'>Education</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/experience" className='p4 hover:text-blue-600'>Experience</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/services" className='p4 hover:text-blue-600'>Services</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/blog" className='p4 hover:text-blue-600'>Blog</Link>
-        </li>
-        <li className='p4'>
-          <Link to="/contact" className='p4 hover:text-blue-600'>Contact</Link>
-          
-        </li>
+        {Navlink.map((link) => (
+          <li className="" key={link.id}>
+            <Link to={link.path} className="p-2 hover:text-blue-600">
+              {link.link}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
+import Mainn from "../component/Mainn";
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="flex">
+      {/* sidebar and main page */}
 
-export default Home
+      <Mainn />
+    </div>
+  );
+};
+
+export default Home;
